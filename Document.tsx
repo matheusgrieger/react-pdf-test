@@ -22,11 +22,10 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 8,
     paddingLeft: 16,
-    paddingRight: 16,
+    paddingRight: 24,
     flexDirection: 'row',
     justifyContent: 'flex-end',
     fontSize: 12,
-    marginBottom: 48,
   },
   dataView: {
     marginLeft: 16,
@@ -36,6 +35,12 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     textTransform: 'uppercase',
     marginRight: 8,
+  },
+
+  body: {
+    paddingTop: 48,
+    paddingLeft: 24,
+    paddingRight: 24,
   },
 });
 
@@ -61,7 +66,7 @@ export default function Document() {
           </View>
         </View>
 
-        <View></View>
+        <View style={styles.body}></View>
       </Page>
     </PdfDocument>
   );
