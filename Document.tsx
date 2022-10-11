@@ -42,6 +42,25 @@ const styles = StyleSheet.create({
     paddingLeft: 24,
     paddingRight: 24,
   },
+  people: {
+    flexDirection: 'row',
+    marginBottom: 24,
+    fontSize: 14,
+    lineHeight: 1.25,
+  },
+  from: {
+    width: '35%',
+    marginRight: 16,
+  },
+  to: {
+    width: '35%',
+  },
+  peopleTitle: {
+    textTransform: 'uppercase',
+    fontWeight: 700,
+    marginBottom: 8,
+    lineHeight: 1,
+  },
 });
 
 export default function Document() {
@@ -66,7 +85,26 @@ export default function Document() {
           </View>
         </View>
 
-        <View style={styles.body}></View>
+        <View style={styles.body}>
+          <View style={styles.people}>
+            <View style={styles.from}>
+              <Text style={styles.peopleTitle}>From</Text>
+              <Text>LOREM IPSUM DOLOR SIT AMET</Text>
+              <Text>123 Sample Street</Text>
+              <Text>City, ST, 99999</Text>
+              <Text>Country</Text>
+              <Text>Tax ID: 99999</Text>
+            </View>
+            <View style={styles.to}>
+              <Text style={styles.peopleTitle}>To</Text>
+              <Text>LOREM IPSUM DOLOR SIT AMET</Text>
+              <Text>123 Sample Street</Text>
+              <Text>City, ST, 99999</Text>
+              <Text>Country</Text>
+              <Text>Tax ID: 99999</Text>
+            </View>
+          </View>
+        </View>
       </Page>
     </PdfDocument>
   );
