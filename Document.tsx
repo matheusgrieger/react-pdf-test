@@ -61,6 +61,81 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     lineHeight: 1,
   },
+
+  table: {
+    marginBottom: 64,
+  },
+  tableHeader: {
+    borderBottom: 2,
+    borderBottomColor: '#c0c0c0',
+    paddingBottom: 8,
+    fontSize: 12,
+    flexDirection: 'row',
+    fontWeight: 700,
+  },
+  tableRow: {
+    paddingTop: 8,
+    paddingBottom: 8,
+    borderBottom: 1,
+    borderBottomColor: '#c0c0c0',
+    flexDirection: 'row',
+    fontSize: 14,
+  },
+  shortTableRow: {
+    paddingTop: 8,
+    paddingBottom: 8,
+    borderBottom: 1,
+    borderBottomColor: '#c0c0c0',
+    flexDirection: 'row',
+    fontSize: 14,
+    marginLeft: 'auto',
+    width: 260,
+    justifyContent: 'space-between',
+  },
+  colDescription: {
+    flexGrow: 1,
+    paddingRight: 16,
+  },
+  colQuantity: {
+    width: 80,
+    textAlign: 'right',
+    paddingRight: 16,
+  },
+  colRate: {
+    width: 80,
+    textAlign: 'right',
+    paddingRight: 16,
+  },
+  colAmount: {
+    width: 100,
+    textAlign: 'right',
+  },
+  textRateType: {
+    fontSize: 12,
+    color: '#a0a0a0',
+  },
+  textBold: {
+    fontWeight: 700,
+  },
+  paymentInformation: {
+    padding: 24,
+    backgroundColor: '#e0e0e0',
+    marginLeft: 24,
+    width: '50%',
+    lineHeight: 1.25,
+    fontSize: 14,
+  },
+  paymentInformationTitle: {
+    fontSize: 18,
+    fontWeight: 700,
+    marginBottom: 16,
+    lineHeight: 1,
+  },
+  paymentInformationSubtitle: {
+    fontWeight: 700,
+    marginBottom: 8,
+    fontSize: 16,
+  },
 });
 
 export default function Document() {
@@ -104,6 +179,62 @@ export default function Document() {
               <Text>Tax ID: 99999</Text>
             </View>
           </View>
+
+          <View style={styles.table}>
+            <View style={styles.tableHeader}>
+              <View style={styles.colDescription}>
+                <Text>Description</Text>
+              </View>
+              <View style={styles.colQuantity}>
+                <Text>Quantity</Text>
+              </View>
+              <View style={styles.colRate}>
+                <Text>Rate</Text>
+              </View>
+              <View style={styles.colAmount}>
+                <Text>Amount</Text>
+              </View>
+            </View>
+            <View style={styles.tableRow}>
+              <View style={styles.colDescription}>
+                <Text>Lorem ipsum dolor sit amet</Text>
+              </View>
+              <View style={styles.colQuantity}>
+                <Text>40</Text>
+              </View>
+              <View style={styles.colRate}>
+                <Text>20</Text>
+                <Text style={styles.textRateType}>(hrs)</Text>
+              </View>
+              <View style={styles.colAmount}>
+                <Text>USD 800.00</Text>
+              </View>
+            </View>
+            <View style={styles.shortTableRow}>
+              <Text>Subtotal</Text>
+              <Text>USD 800.00</Text>
+            </View>
+            <View style={styles.shortTableRow}>
+              <Text style={styles.textBold}>Total</Text>
+              <Text style={styles.textBold}>USD 800.00</Text>
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.paymentInformation}>
+          <Text style={styles.paymentInformationTitle}>
+            Payment Information
+          </Text>
+          <Text style={styles.paymentInformationSubtitle}>
+            Intermediary bank
+          </Text>
+          <Text style={styles.paymentInformationSubtitle}>
+            Beneficiary bank
+          </Text>
+          <Text style={styles.paymentInformationSubtitle}>
+            Beneficiary customer instruction
+          </Text>
+          <Text style={styles.paymentInformationSubtitle}>Reference</Text>
         </View>
       </Page>
     </PdfDocument>
